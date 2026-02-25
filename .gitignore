@@ -1,0 +1,63 @@
+# CIFAR-10 MLOps — git ignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# TensorFlow / Keras checkpoints & saved models
+*.keras
+*.h5
+*.pb
+saved_model/
+models/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Airflow
+airflow_home/
+airflow.db
+airflow.cfg
+airflow_webserver_config.py
+webserver_config.py
+logs/airflow*
+
+# Data (CIFAR-10 auto-downloaded)
+data/
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test artefacts
+.pytest_cache/
+.coverage
+htmlcov/

@@ -1,0 +1,67 @@
+# ============================================================
+# CIFAR-10 MLOps Pipeline Configuration
+# ============================================================
+
+project:
+  name: "cifar10-mlops"
+  description: "Multiclass image classification with TensorFlow, MLflow & Airflow"
+  version: "1.0.0"
+
+# --- Data ---
+data:
+  dataset: "cifar10"
+  num_classes: 10
+  image_size: [32, 32, 3]
+  class_names:
+    - airplane
+    - automobile
+    - bird
+    - cat
+    - deer
+    - dog
+    - frog
+    - horse
+    - ship
+    - truck
+  validation_split: 0.1
+  test_split: 0.1          # fraction of the original train set held out for test
+  random_seed: 42
+  augment: true
+
+# --- Model ---
+model:
+  architecture: "resnet_custom"   # choices: simple_cnn | resnet_custom | efficientnet_transfer
+  input_shape: [32, 32, 3]
+  num_classes: 10
+  dropout_rate: 0.4
+
+# --- Training ---
+training:
+  epochs: 30
+  batch_size: 64
+  learning_rate: 0.001
+  lr_scheduler: "cosine"          # constant | step | cosine
+  early_stopping_patience: 7
+  optimizer: "adam"
+  mixed_precision: false
+
+# --- MLflow ---
+mlflow:
+  tracking_uri: "http://localhost:5000"
+  experiment_name: "cifar10-classification"
+  model_name: "cifar10-resnet"
+  artifact_location: "./mlruns"
+
+# --- Airflow ---
+airflow:
+  dag_id: "cifar10_training_pipeline"
+  schedule_interval: "@weekly"
+  start_date: "2025-01-01"
+  retries: 1
+  retry_delay_minutes: 5
+
+# --- Paths ---
+paths:
+  models_dir: "./models"
+  logs_dir: "./logs"
+  data_dir: "./data"
