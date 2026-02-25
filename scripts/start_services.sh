@@ -10,6 +10,11 @@ PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 AIRFLOW_HOME="${PROJECT_ROOT}/airflow_home"
 LOGS_DIR="${PROJECT_ROOT}/logs"
 
+# ── Activate Virtual Environment if it exists ───────────────────────────────
+if [ -f "${PROJECT_ROOT}/.venv/bin/activate" ]; then
+    source "${PROJECT_ROOT}/.venv/bin/activate"
+fi
+
 export AIRFLOW_HOME
 export AIRFLOW__CORE__DAGS_FOLDER="${PROJECT_ROOT}/dags"
 export AIRFLOW__CORE__LOAD_EXAMPLES="False"
@@ -28,11 +33,11 @@ echo "  ╚═══════════════════════
 echo -e "${NC}"
 
 # ── 1. MLflow tracking server ─────────────────────────────────────────────────
-echo -e "${GREEN}[1/3] Starting MLflow UI on http://localhost:5000 …${NC}"
+echo -e "${GREEN}[1/3] Starting MLflow UI on http://localhost:5050 …${NC}"
 mlflow ui \
   --backend-store-uri "file://${PROJECT_ROOT}/mlruns" \
   --default-artifact-root "file://${PROJECT_ROOT}/mlruns" \
-  --port 5000 \
+  --port 5050 \
   --host 0.0.0.0 \
   > "${LOGS_DIR}/mlflow.log" 2>&1 &
 MLFLOW_PID=$!

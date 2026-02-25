@@ -25,8 +25,8 @@ else
 fi
 
 # 2. Ensure Services are started
-# Check if MLflow is running on 5000
-if ! lsof -i:5000 > /dev/null; then
+# Check if MLflow is running on 5050
+if ! lsof -i:5050 > /dev/null; then
     echo -e "${YELLOW}[!] Services not detected. Starting them now...${NC}"
     bash scripts/start_services.sh &
     sleep 5
@@ -40,6 +40,6 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e " ✅ ${GREEN}PIPELINE TRIGGERED SUCCESSFULLY!${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e " 📊 ${YELLOW}Track Live at:${NC}   http://localhost:8080"
-echo -e " 📈 ${YELLOW}Results at:${NC}      http://localhost:5000"
+echo -e " 📈 ${YELLOW}Results at:${NC}      http://localhost:5050"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e " ${YELLOW}Tip:${NC} Keep this terminal open while services start up."

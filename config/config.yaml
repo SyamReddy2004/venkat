@@ -47,7 +47,7 @@ training:
 
 # --- MLflow ---
 mlflow:
-  tracking_uri: "http://localhost:5000"
+  tracking_uri: "http://localhost:5050"
   experiment_name: "cifar10-classification"
   model_name: "cifar10-resnet"
   artifact_location: "./mlruns"

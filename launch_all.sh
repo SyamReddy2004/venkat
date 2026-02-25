@@ -54,7 +54,7 @@ LAUNCHER_PID=$!
 # 5. Final Output
 echo -e "${GREEN}✅ SERVICES ARE STARTING IN THE BACKGROUND!${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e " 🚀 ${YELLOW}MLflow UI:${NC}    http://localhost:5000"
+echo -e " 🚀 ${YELLOW}MLflow UI:${NC}    http://localhost:5050"
 echo -e " 🌊 ${YELLOW}Airflow UI:${NC}   http://localhost:8080"
 echo -e "    ${NC}Login:${NC}        admin / admin"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
