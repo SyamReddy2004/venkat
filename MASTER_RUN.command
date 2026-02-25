@@ -42,4 +42,11 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e " 📊 ${YELLOW}Track Live at:${NC}   http://localhost:8080"
 echo -e " 📈 ${YELLOW}Results at:${NC}      http://localhost:5050"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+
+# 4. Open in browser automatically
+echo -e "${YELLOW}[*] Opening dashboard in your browser...${NC}"
+open "http://localhost:8080"
+sleep 1
+open "http://localhost:5050"
+
 echo -e " ${YELLOW}Tip:${NC} Keep this terminal open while services start up."
